@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Save Environment - By Gobinda Pandey</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #e0fce0, #f0fff0);
+      color: #333;
+    }
+
+    header {
+      background: #004d00;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    header h1 { font-size: 24px; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #006400;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #d4f5d4;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px black;
+      text-align: center;
+      animation: parallax 15s infinite alternate ease-in-out;
+    }
+
+    @keyframes parallax {
+      from { background-position: center 0px; }
+      to { background-position: center 40px; }
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .slider {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #c8e6c9;
+      padding: 10px;
+    }
+
+    .slider img {
+      height: 150px;
+      margin-right: 20px;
+      animation: scroll 20s linear infinite;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .slider img:hover {
+      transform: scale(1.1) rotateY(5deg);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    footer {
+      background: #003300;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .fun-section, .login-section {
+      text-align: center;
+    }
+
+    #fact {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .input-box {
+      margin: 10px auto;
+    }
+
+    input[type="text"] {
+      padding: 6px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .highlight {
+      background: #e8f5e9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.4s ease;
+    }
+
+    .highlight:hover {
+      transform: perspective(600px) rotateY(3deg);
+    }
+
+    @media(max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .hero { font-size: 22px; padding: 10px; height: 250px; }
+      .slider img { height: 100px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Save Environment</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#plant">Plant Disruption</a>
+      <a href="#degrade">Land Effects</a>
+      <a href="#ai">AI & Countryside</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div class="buttons">
+      <button onclick="showLogin()">Login</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    "Protecting Nature Is Protecting Our Future"
+  </div>
+
+  <section id="about">
+    <h2>About Our Planet</h2>
+    <p>The environment sustains all life on Earth. From forests to rivers, nature is our life-support system. But deforestation, pollution, and climate change are pushing ecosystems to the edge, especially in countryside communities that depend directly on natural resources.</p>
+  </section>
+
+  <section id="plant" class="highlight">
+    <h2>🌿 Disruption of Plant Life</h2>
+    <p>Human actions such as urbanization and farming reduce native vegetation. Cutting forests leads to soil erosion, floods, and loss of oxygen producers — plants. The countryside suffers more due to less regulation and poor land care.</p>
+  </section>
+
+  <section id="degrade">
+    <h2>🏞️ Land Degradation Effects</h2>
+    <p>Soil erosion, desertification, and poor farming exhaust land. This results in food shortages, water scarcity, and increased poverty in rural regions. Sustainable farming, planting trees, and responsible mining can restore balance.</p>
+  </section>
+
+  <section id="ai" class="highlight">
+    <h2>🤖 AI for Countryside Conservation</h2>
+    <p>Artificial Intelligence is helping to:</p>
+    <ul>
+      <li>🌾 Monitor crops using satellite and drones</li>
+      <li>💧 Predict water shortages using sensors</li>
+      <li>🌳 Track illegal deforestation in rural forests</li>
+      <li>🌦️ Forecast climate patterns for remote farmers</li>
+    </ul>
+    <p>With AI tools, rural communities gain smarter agriculture and early warning systems to adapt and survive.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>🌍 Nature Gallery</h2>
+    <div class="slider">
+      <img src="https://images.unsplash.com/photo-1552089123-2a9a3b28a6cb?auto=format&fit=crop&w=400&q=80" alt="Forest">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Sky">
+      <img src="https://images.unsplash.com/photo-1542318423-1bf785df0c90?auto=format&fit=crop&w=400&q=80" alt="Tree">
+      <img src="https://images.unsplash.com/photo-1606788075761-28f1d32ffb20?auto=format&fit=crop&w=400&q=80" alt="Village">
+    </div>
+  </section>
+
+  <section class="fun-section">
+    <h3>💡 Want a Green Fact?</h3>
+    <button onclick="showFact()">Surprise Me!</button>
+    <p id="fact"></p>
+  </section>
+
+  <section id="loginBox" class="login-section" style="display:none;">
+    <h3>👤 Enter Your Name</h3>
+    <div class="input-box">
+      <input type="text" id="username" placeholder="Your Name" />
+      <button onclick="login()">Enter</button>
+    </div>
+    <p id="welcomeMsg"></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Created by Gobinda Pandey. All Rights Reserved.
+  </footer>
+
+  <script>
+    function showFact() {
+      const facts = [
+        "1 tree = enough O2 for 4 people/day!",
+        "AI can reduce water usage by 30% on farms.",
+        "Restoring land could feed 1.3 billion people.",
+        "Countryside forests absorb 11% of CO2 emissions."
+      ];
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      document.getElementById("fact").textContent = randomFact;
+    }
+
+    function showLogin() {
+      document.getElementById("loginBox").style.display = "block";
+    }
+
+    function login() {
+      const name = document.getElementById("username").value;
+      if (name.trim() !== "") {
+        document.getElementById("welcomeMsg").textContent = "Welcome, " + name + "!";
+        alert("Logged in as " + name);
+        document.getElementById("loginBox").style.display = "none";
+      } else {
+        alert("Please enter your name.");
+      }
+    }
+
+    function logout() {
+      alert("Logged out.");
+      document.getElementById("welcomeMsg").textContent = "";
+      document.getElementById("username").value = "";
+    }
+
+    // Reveal on scroll effect
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < window.innerHeight - 50) {
+          sec.classList.add("visible");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
